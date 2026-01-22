@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="">
+    <div class=" w-[60vw] m-auto flex items-center justify-center py-10">
+        <button onclick="onClickLeftButton()" class="bg-black text-white w-10 h-10 rounded-full">
+            l</button>
+        <div id="images">
+            <img id="1" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643"
+                class="w-200 object-cover h-100">
+            <img id="2" src="https://images.unsplash.com/photo-1765779038142-054a9f8c2268"
+                class="hidden w-200 object-cover h-100 ">
+            <img id="3" src="https://images.unsplash.com/photo-1765689311330-41721d65a8eb"
+                class="hidden w-200 object-cover h-100">
+        </div>
+        <button onclick="onClickRightButton()" class="bg-black text-white w-10 h-10 rounded-full">></button>
+    </div>
+
+    <script>
+
+        let img1 = document.getElementById('1')
+        let img2 = document.getElementById('2')
+        let img3 = document.getElementById('3')
+        let onClickLeftButton = () => {
+            if (!img1.classList.contains('hidden')) {
+                console.log("in image1")
+                img1.classList.add('hidden')
+                img3.classList.remove('hidden')
+                return
+            }
+            if (!img3.classList.contains('hidden')) {
+                console.log("in image2")
+                img3.classList.add('hidden')
+                img2.classList.remove('hidden')
+                return
+            }
+            if (!img2.classList.contains('hidden')) {
+                console.log("in image3")
+                img2.classList.add('hidden')
+                img1.classList.remove('hidden')
+                return
+            }
+
+        }
+        let onClickRightButton = () => {
+            if (!img1.classList.contains('hidden')) {
+                console.log("in image1")
+                img1.classList.add('hidden')
+                img2.classList.remove('hidden')
+                return
+            }
+            if (!img2.classList.contains('hidden')) {
+                console.log("in image3")
+                img2.classList.add('hidden')
+                img3.classList.remove('hidden')
+                return
+            }
+            if (!img3.classList.contains('hidden')) {
+                console.log("in image2")
+                img3.classList.add('hidden')
+                img1.classList.remove('hidden')
+                return
+            }
+        }
+
+    </script>
+</body>
+
+
+
+</html>
