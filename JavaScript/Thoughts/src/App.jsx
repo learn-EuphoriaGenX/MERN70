@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
+import SideCommunities from './components/SideCommunities'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 function App() {
-  // let a = 10;
-  let [username, setUsername] = useState("")
-  let [password, setPassword] = useState("")
-
-
-  // onChange
-
-  return (
-    <div>
-      <form class="max-w-sm mx-auto mt-10 p-6 border border-gray-300 rounded-lg shadow-md">
-        <input className='w-full border ' type="text" placeholder="Username" required />
-        <input type="password" className='w-full border ' placeholder="Password" required />
-        <button type="submit" className='w-full border bg-sky-500 '>Login</button>
-      </form>
-      <div>
-
-        You Entered Username: {username}
-        You Entered Password: {password}
-      </div>
-    </div>
-
-  )
+    return (
+        <div>
+            <Navbar />
+            <Sidebar />
+            <div className='absolute top-16 left-[270px]'>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
+                </Routes>
+            </div>
+            <SideCommunities />
+        </div>
+    )
 }
 
 export default App
