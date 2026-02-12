@@ -7,6 +7,10 @@ app.get('/', (req, res) => {
 app.get('/health-check', (req, res) => {
     res.send("Welcome To Thoughts Web Server. All Okk!")
 })
+app.get('/login', (req, res)=>{
+    res.send("<hr><h1>Login</h1><hr>")
+})
+
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is listening on port ${process.env.PORT}`);
