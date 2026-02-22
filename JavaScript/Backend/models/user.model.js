@@ -1,4 +1,3 @@
-const e = require('express')
 let mongoose = require('mongoose')
 let userSchema = new mongoose.Schema({
     username: {
