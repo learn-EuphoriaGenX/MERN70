@@ -14,16 +14,16 @@ const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         let folderName = '';
 
-        if (req.route.path.split('/').includes('posts')) {
-            folderName = path.join(__dirname, '../uploads/posts');
-        }
-        else if (req.route.path.split('/').includes('users')) {
+        // if (req.route.path.split('/').includes('posts')) {
+        //     folderName = path.join(__dirname, '../uploads/posts');
+        // }
+        // else if (req.route.path.split('/').includes('users')) {
             folderName = path.join(__dirname, '../uploads/profile');
-        }
-        else {
-            cb(new Error('Invalid upload path'), null);
-            return;
-        }
+        // }
+        // else {
+        //     cb(new Error('Invalid upload path'), null);
+        //     return;
+        // }
 
         ensureFolderExists(folderName);
         cb(null, folderName);
@@ -38,7 +38,7 @@ const storage = multer.diskStorage({
 
 // File filter
 const fileFilter = (req, file, cb) => {
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 
     if (allowedTypes.includes(file.mimetype)) {
         cb(null, true); // Accept file

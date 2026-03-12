@@ -39,6 +39,17 @@ let userSchema = new mongoose.Schema({
         twitter: String,
         instagram: String,
         linkedin: String
+    },
+    postUploadLimit: {
+        type: Number,
+        default: 1 
+    },
+    currentPostCount: {
+        type: Number,
+        default: 0
+    },
+    otp: {
+        type: String
     }
 
 }, { timestamps: true })

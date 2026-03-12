@@ -5,7 +5,7 @@ module.exports.hashPassword = async (password) => {
     try {
         let salt = await bcrypt.genSalt(10)
         let hashedPassword = await bcrypt.hash(password, salt)
-        return hashedPassword
+        return hashedPassword.toString()
     } catch (error) {
         throw new Error("Error hashing password")
     }
